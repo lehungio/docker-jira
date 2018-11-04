@@ -15,15 +15,15 @@ For the `JIRA_HOME` directory that is used to store application data (amongst ot
 To get started you can use a data volume, or named volumes. In this example we'll use named volumes.
 
     $> docker volume create --name jiraVolume
-    $> docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 lehungio/jira
+    $> docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 7001:7001 lehungio/jira
 
 
-**Success**. JIRA is now available on [http://localhost:8080](http://localhost:8080)*
+**Success**. JIRA is now available on [http://localhost:7001](http://localhost:7001)*
 
 Please ensure your container has the necessary resources allocated to it. We recommend 2GiB of memory allocated to accommodate the application server. See [System Requirements](https://confluence.atlassian.com/adminjiraserver071/jira-applications-installation-requirements-802592164.html) for further information.
     
 
-_* Note: If you are using `docker-machine` on Mac OS X, please use `open http://$(docker-machine ip default):8080` instead._
+_* Note: If you are using `docker-machine` on Mac OS X, please use `open http://$(docker-machine ip default):7001` instead._
 
 ## Memory / Heap Size
 
@@ -71,7 +71,7 @@ If you need to pass additional JVM arguments to JIRA, such as specifying a custo
    
 TODO Example:
 
-    $> docker run -e JVM_SUPPORT_RECOMMENDED_ARGS=-Djavax.net.ssl.trustStore=/var/atlassian/application-data/jira/cacerts -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 lehungio/jira
+    $> docker run -e JVM_SUPPORT_RECOMMENDED_ARGS=-Djavax.net.ssl.trustStore=/var/atlassian/application-data/jira/cacerts -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 7001:7001 lehungio/jira
     
 ## Data Center configuration
 
