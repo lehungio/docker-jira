@@ -1,4 +1,4 @@
-image: lehung/jira:latest
+image: lehung/jira:7.12.3
 clone:
   depth: full
 
@@ -10,7 +10,7 @@ pipelines:
             - git fetch --all
             - export BASE_BRANCH=base-7
             - export BASE_VERSION=7
-            - export DOCKER_REPO=dchevell/jira-software
+            - export DOCKER_REPO=lehungio/jira
             - export DOCKERFILE_VERSION_STRING=JIRA_VERSION
             - export GIT_USER=pipelinesagent
             - export GIT_EMAIL=pipelines-agent@atlassian.com
@@ -23,7 +23,7 @@ pipelines:
             - git fetch --all
             - export BASE_BRANCH=base-7
             - export BASE_VERSION=7
-            - export DOCKER_REPO=dchevell/jira-software
+            - export DOCKER_REPO=lehungio/jira
             - export DOCKERFILE_VERSION_STRING=JIRA_VERSION
             - export GIT_USER=pipelinesagent
             - export GIT_EMAIL=pipelines-agent@atlassian.com
