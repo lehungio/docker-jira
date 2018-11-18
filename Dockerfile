@@ -34,3 +34,7 @@ RUN mkdir -p ${JIRA_INSTALL_DIR} \
   && sed -i -e 's/grep "java version"/grep -E "(openjdk|java) version"/g' ${JIRA_INSTALL_DIR}/bin/check-java.sh \
   && sed -i -e 's/port="8080"/port="8080" secure="${catalinaConnectorSecure}" scheme="${catalinaConnectorScheme}" proxyName="${catalinaConnectorProxyName}" proxyPort="${catalinaConnectorProxyPort}"/' ${JIRA_INSTALL_DIR}/conf/server.xml \
   && sed -i -e 's/Context path=""/Context path="${catalinaContextPath}"/' ${JIRA_INSTALL_DIR}/conf/server.xml
+
+# mysql driver
+# RUN wget -P  https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
+COPY driver/mysql/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar /opt/atlassian/jira/lib
